@@ -10,10 +10,21 @@ public class Trio implements MenuItem {
         drink = dr;
     }
 
-    public String getName() {
-        return name;
+    public String getName()
+    {
+        return sandwich.getName() + "/" + salad.getName() + "/" + drink.getName() + " Trio";
     }
-    public double getPrice() {
-        return price;
+
+    public double getPrice()
+    {
+        MenuItem cheapest = sandwich;
+        
+        if(salad.getPrice() < cheapest.getPrice())
+            cheapest = salad;
+        
+        if(drink.getPrice() < cheapest.getPrice())
+            cheapest = drink;
+        
+        return sandwich.getPrice() + salad.getPrice() + drink.getPrice() - cheapest.getPrice();
     }
 }
