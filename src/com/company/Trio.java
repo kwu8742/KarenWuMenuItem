@@ -9,12 +9,12 @@ public class Trio implements MenuItem {
         salad = sal;
         drink = dr;
     }
-
+    @Override
     public String getName()
     {
         return sandwich.getName() + "/" + salad.getName() + "/" + drink.getName() + " Trio";
     }
-
+    @Override
     public double getPrice()
     {
         MenuItem cheapest = sandwich;
